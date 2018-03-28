@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>App1</title>
+    <meta charset="utf-8">
+    <style>
+    h1{
+    width: 100%; font-family: sans-serif;
+    text-align: center;
+    background-color:rgba(50, 250, 240, 0.5);
+      }
+    </style>
+
+{% load staticfiles %}
+<link rel='stylesheet' href= {% static 'css/bootstrap.min.css' %} type="text/css"/>
+  </head>
+  <body>
+<h1>DATA TAGING</h1>
+
+{% block content %}
+
+{% endblock %}
+
+  </body>
+</html>

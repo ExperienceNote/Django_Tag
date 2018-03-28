@@ -1,22 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>App1</title>
-    <meta charset="utf-8">
-{% load staticfiles %}
-<link rel='stylesheet' href={% static 'css/bootstrap.min.css' %} type="text/css"/>
-  </head>
-  <body>
+{% extends "app1/header.html" %}
+{% block content %}
 
-    <div class="btn-group" role="group" aria-label="Basic example">
-      <button type="button" class="btn btn-secondary">ORGANISATION</button>
-      <button type="button" class="btn btn-secondary">PRODUCT</button>
-      <button type="button" class="btn btn-secondary">DATE</button>
-      <button type="button" class="btn btn-secondary">EVENT</button>
-      <button type="button" class="btn btn-secondary">TIME</button>
-      <button type="button" class="btn btn-secondary">LOCATION</button>
-      <button type="button" class="btn btn-secondary">PERSON</button>
+<div class="jumbotron" >
+  <div class="btn-group d-flex justify-content-center btn-group-toggle  " data-toggle="buttons">
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option1" autocomplete="off"> ORGANISATION
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option2" autocomplete="off">PRODUCT
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option3" autocomplete="off">DATE
+    </label>
+    <label class="btn btn-secondary ">
+      <input type="radio" name="options" id="option4" autocomplete="off" > EVENT
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option5" autocomplete="off">TIME
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option6" autocomplete="off">LOCATION
+    </label>
+    <label class="btn btn-secondary ">
+      <input type="radio" name="options" id="option7" autocomplete="off" > PERSON
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option8" autocomplete="off">GPE
+    </label>
+  </div>
+  <br>
+<hr class="my-4">
+<div class="form-group">
+    <input class="form-control col-lg-20" id="input-lg" type="text">
+</div>
+</div>
 
-    </div>
-  </body>
-</html>
+{% endblock %}

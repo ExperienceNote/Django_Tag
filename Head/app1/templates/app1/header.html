@@ -21,9 +21,8 @@
 
 {% endblock %}
 
- <center><label class="btn btn-secondary">
-  <input type="radio" name="options" id="_SAVE_" autocomplete="off">SAVE
-  </label></center>
+ <center>
+ <button onclick="" id="submit">SUBMIT</button></center>
 </body>
 
 
@@ -52,7 +51,7 @@ $(this).css("background-color","white");
 });
 $("#TextContainer span").live("click",function(event){event.stopPropagation();
 $("#TextContainer span").css("background-color","white");
-$(this).css("background-color","blue");
+$(this).css({"background-color":"pink","font-size":"25px"});
 
 //gets the text of clicked span tag
 var text = $(this).text();

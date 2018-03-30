@@ -10,8 +10,8 @@
     background-color:rgba(50, 250, 240, 0.5);
       }
     </style>
-
 {% load staticfiles %}
+<script src= {% static 'js/jquery1.5.2.js' %}></script>
 <link rel='stylesheet' href= {% static 'css/bootstrap.min.css' %} type="text/css"/>
   </head>
   <body>
@@ -20,8 +20,45 @@
 {% block content %}
 
 {% endblock %}
+
  <center><label class="btn btn-secondary">
   <input type="radio" name="options" id="_SAVE_" autocomplete="off">SAVE
   </label></center>
 </body>
+
+
+<script>
+$(document).ready(function(){
+var words=$("#TextContainer").text().split(' ');
+$("#TextContainer").html("");
+
+$.each(words, function(i,val){
+//wrap each word in a span tag
+$('<span/>').text(val +" ").appendTo("#TextContainer");
+
+});
+$("#TextContainer span").live("mouseover",function(){
+//highlight a word when hovered
+
+$(this).css("background-color","yellow");
+});
+$("#TextContainer span").live("mouseout",function(){
+//highlight a word when hovered
+
+if($(this).css("background-color") !="rgb(0, 0, 255)")
+{
+$(this).css("background-color","white");
+}
+});
+$("#TextContainer span").live("click",function(event){event.stopPropagation();
+$("#TextContainer span").css("background-color","white");
+$(this).css("background-color","blue");
+
+//gets the text of clicked span tag
+var text = $(this).text();
+  //alert("You just selected "+text);
+
+});
+});
+</script>
 </html>
